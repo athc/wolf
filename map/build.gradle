@@ -1,0 +1,14 @@
+dependencies {
+  compile project(":common")
+  compile("org.springframework.boot:spring-boot-starter-web:$spring_boot_version")
+  compile("org.springframework.boot:spring-boot-starter-cache:$spring_boot_version")
+  compile("org.springframework.boot:spring-boot-configuration-processor:$spring_boot_version")
+  compile("com.squareup.okhttp3:okhttp:$okhttp_version")
+  compile("org.springframework.boot:spring-boot-test-autoconfigure:$spring_boot_version")
+  compile("com.spring4all:swagger-spring-boot-starter:$swagger_version")
+  compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.6'
+//  compile group: 'org.ehcache', name: 'ehcache', version: '3.8.1'
+}
+
+group = "com.athc"
+

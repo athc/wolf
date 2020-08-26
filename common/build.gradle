@@ -1,0 +1,9 @@
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter:$spring_boot_version")
+  compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.3'
+  compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.11.2'
+  compile "org.apache.commons:commons-text:$commons_text_version"
+}
+
+group = "com.athc"
+

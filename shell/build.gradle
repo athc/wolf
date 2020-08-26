@@ -1,0 +1,9 @@
+group = "com.athc"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile project(":map")
+}

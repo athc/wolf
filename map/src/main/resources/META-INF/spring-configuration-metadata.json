@@ -1,0 +1,21 @@
+{
+  "group": [
+    {
+      "name": "gaode",
+      "type": "com.athc.map.config.GaodeMapProperties",
+      "sourceType": "com.athc.map.config.GaodeMapProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "gaode.key",
+      "type": "java.lang.String",
+      "sourceType": "com.athc.map.config.GaodeMapProperties"
+    },
+    {
+      "name": "gaode.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.athc.map.config.GaodeMapProperties"
+    }
+  ]
+}
