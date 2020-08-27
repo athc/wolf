@@ -23,12 +23,12 @@ fun <T> Any.toT(clazz: Class<T>): T {
   }
 }
 
-fun Any.toMap(): Map<String, Any?> {
+fun Any.anyToMap(): Map<String, Any?> {
   return this.toT(Map::class.java) as Map<String, Any?>
 }
 
 fun Any.queryString(): String {
-  return this.toMap()
+  return this.anyToMap()
       .filter { null != it.value }
       .map { "${it.key}=${it.value}" }
       .joinToString("&")

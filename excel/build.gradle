@@ -1,0 +1,6 @@
+dependencies {
+  compile project(":common")
+  compile "org.apache.poi:poi-ooxml:$apache_poi_version"
+}
+
+group = "com.athc"
