@@ -11,6 +11,8 @@ buildscript {
     okhttp_version = '4.8.1'
     commons_text_version = '1.8'
     swagger_version = '1.9.1.RELEASE'
+    apache_poi_version = '4.1.2'
+    ehcache_version = '2.10.6'
   }
 
 
