@@ -6,6 +6,7 @@ import com.athc.map.constant.HitokotoUrl
 import com.athc.map.model.Hitokoto
 import com.athc.map.model.HitokotoParam
 import com.athc.map.model.Request
+import com.athc.map.provider.AbstractHttpClientProvider
 import org.springframework.cache.annotation.Cacheable
 import org.springframework.stereotype.Service
 

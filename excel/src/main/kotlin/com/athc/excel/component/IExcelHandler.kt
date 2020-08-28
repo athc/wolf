@@ -39,10 +39,10 @@ interface IExcelHandler {
    *
    * @param filePath 文件路径
    */
-  fun writeXssf(filePath: String, sheets: List<ExcelSheetItem>, titleValueAsKey: Boolean?=false)
+  fun writeXssf(filePath: String, sheets: List<ExcelSheetItem>, titleValueAsKey: Boolean? = false)
 
   /**
-   * 导出数据返回流
+   * 导出数据写入流
    *
    * @param filePath 文件路径
    */

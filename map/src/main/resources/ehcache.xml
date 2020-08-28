@@ -25,7 +25,7 @@
             maxElementsInMemory="100"
             overflowToDisk="false"
             diskPersistent="false"
-            timeToIdleSeconds="120"
+            timeToIdleSeconds="2"
             timeToLiveSeconds="2"
             memoryStoreEvictionPolicy="LRU"
     />
@@ -37,7 +37,7 @@
             overflowToDisk="false"
             diskPersistent="false"
             timeToIdleSeconds="120"
-            timeToLiveSeconds="180"
+            timeToLiveSeconds="120"
             memoryStoreEvictionPolicy="LRU"
     />
 
