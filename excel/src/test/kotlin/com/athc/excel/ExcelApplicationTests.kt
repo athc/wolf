@@ -43,14 +43,15 @@ class ExcelApplicationTests(
   @Test
   fun readXssfWithHeader() {
     val sheets = excelHandler.readXssfWithHeader("/Users/dujf/Desktop/AMap_adcode_citycode.xlsx")
-    sheets.forEach {
-      it.rows.forEach {
-        val cityName = it.getOrDefault("中文名", "")
-        val adcode = it.getOrDefault("adcode", "")
-        val citycode = it.getOrDefault("citycode", "")
-        logger.info("""
-          中文名：$cityName ==== adcode: $adcode ==== citycode: $citycode
-        """.trimIndent())
+    sheets.forEach { item ->
+      item.rows.forEach { data ->
+        var s = ""
+        item.title.forEach { title ->
+          data.getOrDefault(title.value, "").let {
+            s = s + "===" + title.value + ":" + it?.toString()
+          }
+        }
+        logger.info(s)
       }
     }
   }
@@ -97,7 +98,7 @@ class ExcelApplicationTests(
   fun writeXssfOutputStream() {
     val sheets = excelHandler.readXssfWithHeader("/Users/dujf/Desktop/在场车辆列表.xlsx")
     val outputStream = FileOutputStream("/Users/dujf/Desktop/testWrite.xlsx")
-    val item = sheets.get(0)
+    val item = sheets[0]
     val s = sheets.toMutableList()
     repeat(5) {
       s.add(item.copy(

@@ -10,5 +10,5 @@ import java.lang.RuntimeException
 class BaseException(
     val errorCode: String = "",
     override val message: String = "",
-    private val throwable: Throwable? = null
+    throwable: Throwable? = null
 ) : RuntimeException(message, throwable)

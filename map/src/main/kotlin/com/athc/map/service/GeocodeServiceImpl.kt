@@ -4,6 +4,7 @@ import com.athc.common.util.queryString
 import com.athc.map.config.GaodeMapProperties
 import com.athc.map.constant.GaodeUrl
 import com.athc.map.model.*
+import com.athc.map.provider.AbstractHttpClientProvider
 import org.springframework.stereotype.Service
 
 @Service

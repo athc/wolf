@@ -1,8 +1,9 @@
-package com.athc.map.service
+package com.athc.map.provider
 
 import com.athc.common.exception.BaseException
 import com.athc.common.util.logger
 import com.athc.map.model.Request
+import com.athc.map.service.HttpClientService
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import okhttp3.OkHttpClient

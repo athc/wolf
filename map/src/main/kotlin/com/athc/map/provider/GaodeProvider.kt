@@ -1,4 +1,4 @@
-package com.athc.map.service
+package com.athc.map.provider
 
 import com.athc.common.exception.BaseException
 import com.athc.common.util.logger

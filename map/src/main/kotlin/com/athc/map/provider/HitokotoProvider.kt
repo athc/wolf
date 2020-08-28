@@ -1,4 +1,4 @@
-package com.athc.map.service
+package com.athc.map.provider
 
 import com.athc.map.model.Hitokoto
 import okhttp3.OkHttpClient

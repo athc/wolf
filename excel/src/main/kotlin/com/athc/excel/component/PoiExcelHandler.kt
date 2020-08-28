@@ -40,9 +40,9 @@ class PoiExcelHandler : IExcelHandler {
   }
 
   /**
-   * 导出数据返回流
+   * 导出数据写入流
    *
-   * @param filePath 文件路径
+   * @param outputStream 输出流
    */
   override fun writeXssfOutputStream(outputStream: OutputStream, sheets: List<ExcelSheetItem>, titleValueAsKey: Boolean?) {
     val workbook = writeWorkbook(sheets, titleValueAsKey)
@@ -69,7 +69,10 @@ class PoiExcelHandler : IExcelHandler {
               }.filter { r -> r.isNotEmpty() }
             }
           },
-          title = item.rows[0].mapValues { it.value.takeIf { null != it }.toString() }
+          title = item.rows.takeIf { it.isNotEmpty() }
+              ?.firstOrNull()
+              ?.mapValues { it.value.takeIf { null != it }.toString() }
+              ?: emptyMap()
       )
     }
   }
