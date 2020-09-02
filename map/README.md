@@ -19,6 +19,7 @@ spring:
         config: classpath:/ehcache.xml //缓存配置文件
 ```
 
+常用的缓存空间缓存配置
 ```text
  <cache
             name="twoSeconds"  // 缓存空间名称
@@ -30,6 +31,21 @@ spring:
             timeToLiveSeconds="2"  // 缓存有效时间
             memoryStoreEvictionPolicy="LRU" // 内存不足缓存清理策略
     />
+```
+
+未配置的缓存空间可以动态添加，使用默认的缓存配置
+```kotlin
+open class MyEhCacheCacheManager : EhCacheCacheManager() {
+
+  override fun getMissingCache(name: String): Cache {
+    var cache: Cache? = super.getMissingCache(name)
+    if (cache == null) {
+      val ehcache = super.getCacheManager()!!.addCacheIfAbsent(name)
+      cache = EhCacheCache(ehcache)
+    }
+    return cache
+  }
+}
 ```
 
 ## 常用缓存注解说明
@@ -72,5 +88,22 @@ spring:
 )
 ```
 
-* @Caching // 缓存组 
+* @Caching // 缓存组
+
+## 接口缓存数据
+```kotlin
+// 获取缓存管理器
+ val cacheManager = cacheCacheManager.cacheManager
+    cacheManager?.let {
+      // 获取缓存空间
+      val cache = it.addCacheIfAbsent("cacheName")
+      // 缓存数据
+      cache.put(Element("key", "value"))
+      // 读取缓存数据
+      cache.get("key").let {
+        it
+      }
+    }
+  }
+``` 
 
