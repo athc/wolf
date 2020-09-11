@@ -4,6 +4,8 @@ import com.athc.common.util.Generator
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
+import java.util.concurrent.ScheduledThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 
 /**
  * @author jjj
@@ -30,4 +32,15 @@ class SimpleTest {
       Assertions.assertTrue(it.length == 10)
     }
   }
+
+  @Test
+  fun testEx() {
+    val executor = ScheduledThreadPoolExecutor(5)
+    executor.schedule({
+      println("线程名称：${Thread.currentThread().name}")
+    }, 1000L, TimeUnit.MILLISECONDS)
+    println("线程名称：${Thread.currentThread().name}")
+    Thread.sleep(2000L)
+  }
+
 }

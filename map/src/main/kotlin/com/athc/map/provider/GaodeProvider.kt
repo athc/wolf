@@ -7,10 +7,12 @@ import com.athc.map.model.GaodeBaseResponse
 import com.fasterxml.jackson.module.kotlin.readValue
 import okhttp3.OkHttpClient
 import okhttp3.Response
+import org.springframework.stereotype.Service
 
+@Service
 class GaodeProvider(
     httpClient: OkHttpClient
-) : AbstractHttpClientProvider(httpClient) {
+) : OkHttpClientProvider(httpClient) {
 
   /**
    * 执行请求

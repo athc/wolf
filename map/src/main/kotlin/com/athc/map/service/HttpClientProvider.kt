@@ -7,7 +7,7 @@ import com.athc.map.model.Request
  * @date 2020/8/20
  * @since JDK1.8
  */
-interface HttpClientService {
+interface HttpClientProvider {
 
   /**
    * 执行请求

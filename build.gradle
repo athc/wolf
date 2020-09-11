@@ -13,6 +13,9 @@ buildscript {
     swagger_version = '1.9.1.RELEASE'
     apache_poi_version = '4.1.2'
     ehcache_version = '2.10.6'
+    hibernate_validator_version = '6.0.9.Final'
+    log4j_version = '2.13.3'
+    jaskson_version = '2.11.2'
   }
 
 
