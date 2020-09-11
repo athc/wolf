@@ -3,11 +3,13 @@ package com.athc.map.provider
 import com.athc.map.model.Hitokoto
 import okhttp3.OkHttpClient
 import okhttp3.Response
+import org.springframework.stereotype.Service
 import java.nio.charset.Charset
 
+@Service
 class HitokotoProvider(
-    httpClient: OkHttpClient
-) : AbstractHttpClientProvider(httpClient) {
+    client: OkHttpClient
+) : OkHttpClientProvider(client) {
 
   /**
    * 执行请求

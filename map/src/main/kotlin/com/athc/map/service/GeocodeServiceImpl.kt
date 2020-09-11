@@ -4,12 +4,11 @@ import com.athc.common.util.queryString
 import com.athc.map.config.GaodeMapProperties
 import com.athc.map.constant.GaodeUrl
 import com.athc.map.model.*
-import com.athc.map.provider.AbstractHttpClientProvider
 import org.springframework.stereotype.Service
 
 @Service
 class GeocodeServiceImpl(
-    private val gaodeProvider: AbstractHttpClientProvider,
+    private val gaodeProvider: HttpClientProvider,
     private val properties: GaodeMapProperties
 ) : GeocodeService {
   /**

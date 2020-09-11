@@ -5,6 +5,7 @@ import com.athc.map.service.HitokotoService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import javax.validation.Valid
 
 /**
  * @author jjj
@@ -18,5 +19,5 @@ class HitokotoController(
 ) {
 
   @GetMapping("/test")
-  fun content(param: HitokotoParam) = hitokotoService.content(param)
+  fun content(@Valid param: HitokotoParam) = hitokotoService.content(param)
 }

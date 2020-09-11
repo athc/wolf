@@ -1,6 +1,7 @@
 package com.athc.map.model
 
 import io.swagger.annotations.ApiModelProperty
+import javax.validation.constraints.NotBlank
 
 /**
  * @author jjj
@@ -23,6 +24,7 @@ class HitokotoParam(
         "l\t抖机灵\n" +
         "其他\t作为 动画 类型处理\n" +
         "可选择多个分类，例如： ?c=a&c=c")
+    @field:NotBlank
     val c: String? = null,
 
     @ApiModelProperty("")
